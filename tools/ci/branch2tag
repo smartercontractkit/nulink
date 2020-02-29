@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+branch=`echo $1 | awk '{print tolower($0)}'`
+if [ "${branch}" = "develop" ]; then
+  echo develop
+elif [ "${branch}" = "master" ]; then
+  echo latest
+elif [[ "${branch}" =~ ^release\/([a-zA-Z0-9.]+) ]]; then
+  echo "candidate-${BASH_REMATCH[1]}"
+else
+  echo "unknown"
+fi

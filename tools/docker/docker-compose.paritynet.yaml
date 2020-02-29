@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  node:
+    depends_on:
+      - devnet
+  devnet:
+    container_name: parity
+    image: smartcontract/devnet:st-peters
+    user: root
+    command: --config /devnet/miner.toml --db-path /devnet/database
+    ports:
+      - 8545:8545
+    volumes:
+      - parity-db-data:/devnet/database
+volumes:
+  parity-db-data:

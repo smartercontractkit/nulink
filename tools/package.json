@@ -1,0 +1,17 @@
+{
+  "name": "@nulink/tools",
+  "version": "0.6.5",
+  "license": "MIT",
+  "scripts": {
+    "depcheck": "echo '@nulink/tools' && depcheck || true"
+  },
+  "engines": {
+    "node": "~10.16"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "depcheck": "^0.9.1"
+  }
+}
